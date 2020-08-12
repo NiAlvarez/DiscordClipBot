@@ -1,0 +1,31 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+const prefix = '-'
+
+client.once('ready', () => {
+    console.log('Bot listo para la accion');
+});
+
+client.on('guildMemberAdd', member =>{
+    const channel = member.guild.channels.cache.find(channel => channel.name === "welcome");
+    if(!channel) return;
+
+    channel.send(`Bienvenido al server de Discord del Plan Clip, ${member}, por favor este es un espacio para discutir acerca del plan en la que estamos. Si troleas, hay tabla. Por favor ubicate en el canal que te corresponda segun tu grupo y aula asignada`);
+})
+
+client.on('message', message =>{
+    if(message.content.startsWith(prefix) || message.author.bot) return;
+
+    const args = message.content.slice(prefix.length).split(/ + /);
+    const command = args.shift().toLowerCase();
+
+    if (command === 'ping'){
+        message.channel.send('pong');
+    }
+        else if (command === 'aulavirtual'){
+            message.channel.send('https://clip.moodle.school/login/index.php');
+        }    
+})
+
+client.login('NzQyODc3NjgzMjU5NjcwNjQ4.XzMgwQ.v_G5mebz2J8a847Umlc5gknuAGM');
