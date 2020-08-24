@@ -6,9 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Karmacita",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiAlvarez/DiscordClipBot.git"
+  },
+  "keywords": [
+    "juego",
+    "viborita"
+  ],
+  "bugs": {
+    "url": "https://github.com/NiAlvarez/DiscordClipBot/issues"
+  },
+  "homepage": "https://github.com/NiAlvarez/DiscordClipBot#readme"
 }
